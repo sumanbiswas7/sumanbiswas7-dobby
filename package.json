@@ -1,0 +1,21 @@
+{
+   "name": "root",
+   "private": true,
+   "author": "Suman Biswas",
+   "workspaces": [
+      "packages/*",
+      "apps/*"
+   ],
+   "scripts": {
+      "format": "prettier --write .",
+      "dev": "lerna run dev",
+      "dev:pkg": "lerna run dev:pkg",
+      "build:pkg": "lerna run build:pkg",
+      "clean": "lerna run clean:unix"
+   },
+   "dependencies": {},
+   "devDependencies": {
+      "prettier": "^3.0.3",
+      "lerna": "^8.0.2"
+   }
+}

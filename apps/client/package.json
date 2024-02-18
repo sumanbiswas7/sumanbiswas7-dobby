@@ -1,0 +1,26 @@
+{
+   "name": "client",
+   "private": true,
+   "version": "0.0.0",
+   "scripts": {
+      "dev": "SET NODE_ENV=development & rspack serve",
+      "build": "NODE_ENV=production rspack build",
+      "clean:unix": "rm -rf node_modules && rm -rf dist",
+      "clean:win": "if exist node_modules rmdir /s /q node_modules && if exist dist rmdir /s /q dist"
+   },
+   "dependencies": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-router-dom": "^6.21.1",
+      "types": "*",
+      "utils": "*"
+   },
+   "devDependencies": {
+      "@rspack/cli": "0.4.0",
+      "@rspack/core": "0.4.0",
+      "@rspack/plugin-react-refresh": "0.4.0",
+      "@types/react": "18.2.0",
+      "@types/react-dom": "18.2.1",
+      "typescript": "^5.0.4"
+   }
+}
