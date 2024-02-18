@@ -1,4 +1,4 @@
-service: server
+service: dobby
 frameworkVersion: "3"
 useDotenv: true
 
