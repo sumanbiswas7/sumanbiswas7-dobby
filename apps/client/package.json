@@ -4,7 +4,7 @@
    "version": "0.0.0",
    "scripts": {
       "dev": "SET NODE_ENV=development & rspack serve",
-      "build": "SET NODE_ENV=production rspack build",
+      "build": "SET NODE_ENV=production & rspack build",
       "clean:unix": "rm -rf node_modules && rm -rf dist",
       "clean:win": "if exist node_modules rmdir /s /q node_modules && if exist dist rmdir /s /q dist"
    },
