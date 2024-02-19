@@ -12,10 +12,12 @@
       "clean:win": "if exist node_modules rmdir /s /q node_modules && if exist dist rmdir /s /q dist"
    },
    "dependencies": {
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0",
       "@mantine/core": "^7.5.3",
       "@mantine/hooks": "^7.5.3",
+      "@mantine/notifications": "^7.5.3",
+      "@tabler/icons-react": "^2.47.0",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
       "react-router-dom": "^6.21.1",
       "types": "*",
       "utils": "*"

@@ -4,10 +4,11 @@ import "./styles/global.css";
 import { MantineProvider, createTheme } from "@mantine/core";
 
 import "@mantine/core/styles.css";
-// import "@mantine/notifications/styles.css";
+import "@mantine/notifications/styles.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import routes from "./routes/routes.tsx";
+import { Notifications } from "@mantine/notifications";
 
 const route = createBrowserRouter(routes);
 
@@ -31,6 +32,7 @@ const theme = createTheme({
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
    <React.StrictMode>
       <MantineProvider theme={theme}>
+         <Notifications />
          <RouterProvider router={route} />
       </MantineProvider>
    </React.StrictMode>
