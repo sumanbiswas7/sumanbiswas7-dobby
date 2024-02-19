@@ -1,25 +1,15 @@
 import serverless from "serverless-http";
 import express, { Request, Response } from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-
-import { AUTHOR } from "utils";
-import animalRoutes from "./routes/animal.route";
+import authRoutes from "./routes/auth.route";
 
 export const app = express();
 
-// Middlewares
-app.use(bodyParser.json());
-app.use(cors());
-
-// Routes
-app.use("/animal", animalRoutes);
+app.use("/auth", authRoutes);
 
 app.get("/", (req: Request, res: Response) => {
    res.json({
-      AUTHOR,
       working: true,
-      message: `Hello World okss`,
+      message: `Hello World`,
       secret: `SECRET: ${process.env.SECRET} 🤫`,
    });
 });
