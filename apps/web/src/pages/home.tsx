@@ -1,5 +1,7 @@
-import { Box, Flex, Grid, SimpleGrid } from "@mantine/core";
+import { Box, Flex, SimpleGrid, Text } from "@mantine/core";
 import { NavBar } from "../components/navbar";
+import DUMMY_DATA from "../data/dummy-data.json";
+import { Card } from "../components/card";
 
 export default function HomePage() {
    return (
@@ -7,20 +9,15 @@ export default function HomePage() {
          <NavBar />
 
          <Box h={"100%"} style={{ overflowY: "scroll" }}>
-            <SimpleGrid bg={"red"} w={"100%"} cols={2} spacing="sm" p={"sm"}>
-               <div style={{ backgroundColor: "blue", height: "10rem" }}>1</div>
-               <div style={{ backgroundColor: "blue", height: "10rem" }}>2</div>
-               <div style={{ backgroundColor: "blue", height: "10rem" }}>3</div>
-               <div style={{ backgroundColor: "blue", height: "10rem" }}>4</div>
-               <div style={{ backgroundColor: "blue", height: "10rem" }}>5</div>
-               <div style={{ backgroundColor: "blue", height: "10rem" }}>5</div>
-               <div style={{ backgroundColor: "blue", height: "10rem" }}>5</div>
-               <div style={{ backgroundColor: "blue", height: "10rem" }}>5</div>
-               <div style={{ backgroundColor: "blue", height: "10rem" }}>5</div>
-               <div style={{ backgroundColor: "blue", height: "10rem" }}>5</div>
-               <div style={{ backgroundColor: "blue", height: "10rem" }}>5</div>
-               <div style={{ backgroundColor: "blue", height: "10rem" }}>5</div>
-            </SimpleGrid>
+            {DUMMY_DATA.length ? (
+               <SimpleGrid w={"100%"} cols={2} spacing="sm" p={"sm"}>
+                  {DUMMY_DATA.map((data) => (
+                     <Card title={data.name} url={data.url} />
+                  ))}
+               </SimpleGrid>
+            ) : (
+               <Text>No data to show</Text>
+            )}
          </Box>
       </Flex>
    );
